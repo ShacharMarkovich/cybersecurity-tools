@@ -37,7 +37,10 @@ def get_SYN_flood_ip(pcap_file_name: str, times: int):
 
 def SYN_flood_detection(pcap_file_name: str, appear: int):
     """
-
+    Detect SYN Flood attack.
+    Do it by find all IP addresses that send more than `appear` time a TCP SYN segment,
+    and DIDN'T send any other kind of TCP segment.
+    
     :param pcap_file_name: pcap file name which contains all the sniffed packets.
     :param appear: the suspicious amount bar of sending only TCP SYN segments.
     :return: IP address and count of TCP SYN segments that it sent.
